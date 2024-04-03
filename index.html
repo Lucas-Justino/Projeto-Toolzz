@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link para o Font Awesome -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .image-section {
+            width: 70%;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-section {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .company-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .create-account-link {
+            background-color: transparent;
+            color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: none;
+        }
+
+        .welcome-title {
+            font-size: 24px;
+            margin: -10px 0 20px 0;
+            align-self: flex-start;
+            padding-top: 100px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .social-button {
+            background-color: #fff;
+            border: 1px solid #000; /* Alterado para manter a borda preta */
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social-button img {
+            width: 20px;
+            height: auto;
+            padding: 0px 20px 0px 20px;
+        }
+
+        .or-text {
+            font-size: 14px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .login-form {
+            width: 90%;
+        }
+
+        .form-input-container {
+            position: relative; /* Garante que o ícone seja posicionado em relação a este elemento */
+        }
+
+        .form-input {
+            width: calc(100% - 40px); /* Subtraindo o espaço do ícone */
+            padding: 10px 10px 10px 40px; /* Adicionando espaço para o ícone */
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-input i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .remember-me {
+            margin: 10px 0;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: calc(100% - 20px); /* Ajustando o tamanho */
+            margin-top: 10px; /* Adicionando espaço acima */
+        }
+
+        .login-btn i {
+            margin-right: 5px;
+        }
+
+        .forgot-password {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .recovery-password{
+            background-color: transparent;
+            color: #007bff;
+            border: none;
+            padding: 10px 20px 0px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            top: 20px;
+            right: 20px;
+            text-decoration: none;
+        }
+
+        .captcha-container {
+            width: 450px;
+            height: 80px;
+            margin: 50px auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text-checkbox-container {
+            display: flex;
+            align-items: center;
+            padding-bottom: 25px;
+        }
+
+        .checkbox-container {
+            margin-right: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .logo-captcha {
+            height: 50px;
+        }
+
+        .logo-container-captcha {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .logo-text-captcha {
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                width: 100%;
+                height: 50vh;
+            }
+
+            .form-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo da Empresa" class="logo">
+                <p class="company-name">Nome da Empresa</p>
+            </div>
+            <a href="#" class="create-account-link">Criar conta</a>
+            <h2 class="welcome-title">Boas-Vindas!</h2>
+            <p>Texto editável</p>
+            <div class="social-buttons">
+                <button class="social-button"><img src="facebook.jpg" alt="Facebook"></button>
+                <button class="social-button"><img src="apple.jpg" alt="Instagram"></button>
+                <button class="social-button"><img src="apple.jpg" alt="Twitter"></button>
+                <button class="social-button"><img src="apple.jpg" alt="LinkedIn"></button>
+            </div>
+            <p class="or-text">ou</p>
+            <form class="login-form">
+                <div class="form-input-container">
+                    <i class="fas fa-user"></i> <!-- Ícone do usuário -->
+                    <input type="text" class="form-input" placeholder="Usuário">
+                </div>
+                <div class="form-input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="form-input" placeholder="Senha">
+                </div>
+                <label class="remember-me"><input type="checkbox"> Manter conectado</label>
+                <div class="captcha-container">
+                    <div class="content">
+                        <div class="text-checkbox-container">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="human-checkbox">
+                                <label for="human-checkbox">Eu sou humano</label>
+                            </div>
+                        </div>
+                        <div class="logo-container-captcha">
+                            <img src="captcha-logo.jpg" class="logo" alt="CAPTCHA Logo">
+                            <p class="logo-text-captcha">Privacy - Terms</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="login-btn"><i class="fas fa-sign-in-alt"></i>Entrar</button>
+                <p class="forgot-password">Esqueceu sua senha? <a class="recovery-password" href="">Recuperar senha</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
