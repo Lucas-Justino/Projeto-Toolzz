@@ -1,32 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Site</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link para o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link para o Font Awesome -->
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
+            position: relative;
+            /* Para garantir que os elementos absolutos sejam relativos ao corpo */
+        }
+
+        .title-image {
+            color: #fff;
+        }
+
+        .text-image {
+            color: #909090;
+            margin: 0px 0px 0px 0px;
         }
 
         .container {
             display: flex;
             height: 100vh;
+            position: relative;
+            /* Para garantir que os elementos absolutos dentro dela sejam relativos à própria .container */
         }
 
         .image-section {
-            width: 70%;
+            width: 50%;
+            height: auto;
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 50px;
         }
 
+        .back-button {
+            background-color: transparent;
+            top: 50px;
+            left: 50px;
+            ;
+            color: #fff;
+            border: 2px solid;
+            border-color: #fff;
+            border-radius: 50%;
+            /* Estilo redondo */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 0px 25% 0px;
+        }
+
+        .course-button {
+            margin: 15% 0px 0px 0px;
+            width: 78px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 50px;
+            background: #0761E2;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            height: 32px;
+        }
+
+        .container-div-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 98%;
+            margin: 5% 0 5% 0;
+        }
+
+        .left-items {
+            display: flex;
+        }
+
+        .right-items {
+            display: flex;
+        }
+
+        .item {
+            padding: 5px 10px;
+            margin-right: 5px;
+            width: 70px;
+            height: 1px;
+            background-color: #222222;
+            border: none;
+        }
+
+        .item-icon {
+            padding: 5px 10px;
+            margin-right: 5px;
+            color: #222222;
+            border: none;
+            font-size: 24px;
+        }
+
+        .white-item {
+            background-color: #fff;
+        }
+
+        .white-icon {
+            color: #fff;
+        }
+
+
         .form-section {
-            width: 30%;
+            width: 50%;
             background-color: #fff;
             padding: 20px;
             display: flex;
@@ -39,9 +133,7 @@
         .logo-container {
             display: flex;
             align-items: center;
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            margin-bottom: 20px;
         }
 
         .logo {
@@ -59,32 +151,31 @@
             background-color: transparent;
             color: #007bff;
             border: none;
-            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            align-self: flex-end;
+            margin-bottom: 20px;
             text-decoration: none;
         }
 
         .welcome-title {
             font-size: 24px;
-            margin: -10px 0 20px 0;
+            margin: -40px 0 20px 0;
             align-self: flex-start;
-            padding-top: 100px;
         }
 
         .social-buttons {
             display: flex;
             gap: 30px;
             justify-content: center;
+            margin-bottom: 20px;
         }
 
         .social-button {
             background-color: #fff;
-            border: 1px solid #000; /* Alterado para manter a borda preta */
+            border: 1px solid #000;
+            /* Alterado para manter a borda preta */
             padding: 5px 15px;
             border-radius: 5px;
             cursor: pointer;
@@ -107,12 +198,15 @@
         }
 
         .form-input-container {
-            position: relative; /* Garante que o ícone seja posicionado em relação a este elemento */
+            position: relative;
+            /* Garante que o ícone seja posicionado em relação a este elemento */
         }
 
         .form-input {
-            width: calc(100% - 40px); /* Subtraindo o espaço do ícone */
-            padding: 10px 10px 10px 40px; /* Adicionando espaço para o ícone */
+            width: calc(100% - 40px);
+            /* Subtraindo o espaço do ícone */
+            padding: 10px 10px 10px 40px;
+            /* Adicionando espaço para o ícone */
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -138,8 +232,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            width: calc(100% - 20px); /* Ajustando o tamanho */
-            margin-top: 10px; /* Adicionando espaço acima */
+            width: calc(100% - 20px);
+            /* Ajustando o tamanho */
+            margin-top: 10px;
+            /* Adicionando espaço acima */
         }
 
         .login-btn i {
@@ -151,7 +247,7 @@
             margin-top: 20px;
         }
 
-        .recovery-password{
+        .recovery-password {
             background-color: transparent;
             color: #007bff;
             border: none;
@@ -159,7 +255,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            top: 20px;
             right: 20px;
             text-decoration: none;
         }
@@ -221,19 +316,49 @@
                 width: 100%;
             }
         }
+
+        .circled {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="image-section"></div>
+        <div class="image-section">
+            <div class="back-button"><i class="fas fa-chevron-left"></i></div>
+            <button class="course-button">Cursos</button>
+            <h2 class="title-image">Plataforma de Cursos Completos</h2>
+            <p class="text-image">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nemo laudantium error doloribus. Modi, voluptatibus praesentium nulla quas molestias laboriosam?
+                Ut, tempora fuga excepturi ea totam eligendi sunt quisquam voluptas repellat!</p>
+            <div class="container-div-footer">
+                <div class="left-items">
+                    <div class="item white-item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="right-items">
+                    <div class="item-icon"><i class="fas fa-chevron-left"></i></div>
+                    <div class="item-icon white-icon"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
         <div class="form-section">
             <div class="logo-container">
                 <img src="logo.jpg" alt="Logo da Empresa" class="logo">
-                <p class="company-name">Nome da Empresa</p>
+                <p class="company-name">Toolzz<span class="circled">R</span></p>
+
             </div>
             <a href="#" class="create-account-link">Criar conta</a>
             <h2 class="welcome-title">Boas-Vindas!</h2>
-            <p>Texto editável</p>
+            <p>Entre utilizando uma das opções abaixo</p>
             <div class="social-buttons">
                 <button class="social-button"><img src="facebook.jpg" alt="Facebook"></button>
                 <button class="social-button"><img src="apple.jpg" alt="Instagram"></button>
@@ -266,9 +391,11 @@
                     </div>
                 </div>
                 <button class="login-btn"><i class="fas fa-sign-in-alt"></i>Entrar</button>
-                <p class="forgot-password">Esqueceu sua senha? <a class="recovery-password" href="">Recuperar senha</a></p>
+                <p class="forgot-password">Esqueceu sua senha? <a class="recovery-password" href="">Recuperar senha</a>
+                </p>
             </form>
         </div>
     </div>
 </body>
+
 </html>
